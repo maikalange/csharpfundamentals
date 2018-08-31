@@ -6,10 +6,12 @@ namespace Selections
     {
         static void Main(string[] args)
         {
+            TrianglePerimeter.CalculatePerimeter();
             RockPaperScissors.PlayGame();
             RandomMonthGenerator.GenerateMonth();
             QuadraticEquation.PromptForConstants();
             PickACard.GetACard();
+
         }
 
         private static void Example2(int x)
