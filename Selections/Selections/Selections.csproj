@@ -48,6 +48,7 @@
     <Compile Include="QuadraticEquation.cs" />
     <Compile Include="RandomMonthGenerator.cs" />
     <Compile Include="RockPaperScissors.cs" />
+    <Compile Include="TrianglePerimeter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
