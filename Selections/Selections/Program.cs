@@ -6,6 +6,7 @@ namespace Selections
     {
         static void Main(string[] args)
         {
+            RandomMonthGenerator.GenerateMonth();
             QuadraticEquation.PromptForConstants();
         }
 
@@ -19,16 +20,16 @@ namespace Selections
             }
         }
 
-        private static void Example3(int NumberOfTosses)
+        private static void Example3(int numberOfTosses)
         {
             const string HEADS = "HEADS";
             const string TAILS = "TAILS";
             Random r = new Random();
             //HEADS =1, TAILS =0
       
-            for (int i = 0; i < NumberOfTosses; i++)
+            for (int i = 0; i < numberOfTosses; i++)
             {
-                Console.WriteLine(Math.Floor(r.Next() * 2d) == 1 ? HEADS : TAILS);
+                Console.WriteLine(Math.Floor(r.Next() * 2m) == 1 ? HEADS : TAILS);
             }
             
         }
