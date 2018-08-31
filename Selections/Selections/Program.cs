@@ -6,6 +6,7 @@ namespace Selections
     {
         static void Main(string[] args)
         {
+            QuadraticEquation.PromptForConstants();
         }
 
         private static void Example2(int x)
@@ -27,29 +28,14 @@ namespace Selections
       
             for (int i = 0; i < NumberOfTosses; i++)
             {
-                if (Math.Floor(r.Next() * 2d) == 1)
-                {
-                    Console.WriteLine(HEADS);
-                }
-                else
-                {
-                    Console.WriteLine(TAILS);
-                }
+                Console.WriteLine(Math.Floor(r.Next() * 2d) == 1 ? HEADS : TAILS);
             }
             
         }
 
         private static void Example1(int x)
         {
-            if (x % 2 == 0)
-            {
-                Console.WriteLine("Even number");
-            }
-            else
-            {
-                Console.WriteLine("Odd number");
-            }
-
+            Console.WriteLine(x % 2 == 0 ? "Even number" : "Odd number");
         }
     }
 }
