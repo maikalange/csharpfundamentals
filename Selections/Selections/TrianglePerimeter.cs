@@ -18,7 +18,7 @@ namespace Selections
             Console.WriteLine("Enter the sides of the rectangle: A, B and C");
             string sides  =Console.ReadLine();
             string[]values  = sides.Split(new char[] {' '});
-            //Not ideal look at the problems
+            //Not ideal look at the problems presented by taking this approach
             A = Convert.ToDecimal(values[0]);
             B = Convert.ToDecimal(values[1]);
             C = Convert.ToDecimal(values[2]);
