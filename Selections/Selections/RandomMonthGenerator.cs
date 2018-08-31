@@ -7,14 +7,7 @@ namespace Selections
         public static void GenerateMonth()
         {
             Random x = new Random();
-            var k = 0;
-            for (int i = 0; i < 2000; i++)
-            {
-                 k = (int)Math.Floor(1 + x.NextDouble() * 12d);
-                Console.WriteLine(k);
-            }
-
-
+            var k = (int)Math.Floor(1 + x.NextDouble() * 12d); ;
 
             switch (k)
             {
