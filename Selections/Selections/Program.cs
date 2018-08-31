@@ -6,6 +6,7 @@ namespace Selections
     {
         static void Main(string[] args)
         {
+            RockPaperScissors.PlayGame();
             RandomMonthGenerator.GenerateMonth();
             QuadraticEquation.PromptForConstants();
             PickACard.GetACard();

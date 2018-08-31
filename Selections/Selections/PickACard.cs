@@ -37,7 +37,7 @@ namespace Selections
                 rankName = randomRank.ToString();
             }
 
-           Console.WriteLine(String.Format("The card you picked is {0} of {1}",rankName,randomSuit));
+           Console.WriteLine($"The card you picked is {rankName} of {randomSuit}");
                
         }
     }
