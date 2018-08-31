@@ -8,7 +8,7 @@ namespace Selections
 {
     class RockPaperScissors
     {
-        enum MyEnum
+        private enum Option
         {
             Scissors,
             Rock,
@@ -19,54 +19,57 @@ namespace Selections
         {
             var random  = new Random();
   
-            var computersValue = (int) Math.Floor(random.NextDouble()* 3) ;
+            var computersOption = (int) Math.Floor(random.NextDouble()* 3) ;
             Console.WriteLine("Scissors(0), Rock(1), Paper(2):");
             var k = Console.ReadLine();
 
-            if (Int32.TryParse(k, out int humansValue))
+            if (Int32.TryParse(k, out int humansOption))
             {
-                if (humansValue >= 0&& humansValue<=2)
+                if (humansOption >= 0&& humansOption<=2)
                 {
-                    if (computersValue == humansValue)
+                    if (computersOption == humansOption)
                     {
-                        Console.WriteLine("The computer is {0}. You are {0} too . You draw with the computer", Enum.GetName(typeof(MyEnum),computersValue));
+                        Console.WriteLine("The computer is {0}. You are {0} too . You draw with the computer", Enum.GetName(typeof(Option),computersOption));
                     }
-                    else if (computersValue == (int)MyEnum.Scissors)
-                    {
-                        switch (humansValue)
+                    else switch (computersOption)
                         {
-                            case (int)MyEnum.Rock:
-                                Console.WriteLine("The computer is scissors. You are rock. You win.");
+                            case (int)Option.Scissors:
+                                switch (humansOption)
+                                {
+                                    case (int)Option.Rock:
+                                        Console.WriteLine("The computer is scissors. You are rock. You win.");
+                                        break;
+                                    case (int)Option.Paper:
+                                        Console.WriteLine("The computer is scissors. You are paper. You lose.");
+                                        break;
+                                }
+
                                 break;
-                            case (int)MyEnum.Paper:
-                                Console.WriteLine("The computer is scissors. You are paper. You lose.");
+                            case (int)Option.Rock:
+                                switch (humansOption)
+                                {
+                                    case (int)Option.Scissors:
+                                        Console.WriteLine("The computer is rock. You are scissors. You lose.");
+                                        break;
+                                    case (int)Option.Paper:
+                                        Console.WriteLine("The computer is rock. You are paper. You win.");
+                                        break;
+                                }
+
+                                break;
+                            case (int)Option.Paper:
+                                switch (humansOption)
+                                {
+                                    case (int)Option.Scissors:
+                                        Console.WriteLine("The computer is paper. You are scissors. You win.");
+                                        break;
+                                    case (int)Option.Rock:
+                                        Console.WriteLine("The computer is paper. You are rock. You win");
+                                        break;
+                                }
+
                                 break;
                         }
-                    }
-                    else if (computersValue == (int)MyEnum.Rock)
-                    {
-                        switch (humansValue)
-                        {
-                            case (int)MyEnum.Scissors:
-                                Console.WriteLine("The computer is rock. You are scissors. You lose.");
-                                break;
-                            case (int)MyEnum.Paper:
-                                Console.WriteLine("The computer is rock. You are paper. You win.");
-                                break;
-                        }
-                    }
-                    else if (computersValue == (int)MyEnum.Paper)
-                    {
-                        switch (humansValue)
-                        {
-                            case (int)MyEnum.Scissors:
-                                Console.WriteLine("The computer is paper. You are scissors. You win.");
-                                break;
-                            case (int)MyEnum.Rock:
-                                Console.WriteLine("The computer is paper. You are rock. You win");
-                                break;
-                        }
-                    }
                 }
                 Console.WriteLine("You entered a value out of range.");
             }
