@@ -14,9 +14,25 @@ namespace CSharpFundamentals
             {
                 int[] r = {1, 9, 5, 3, 2, 2, 1, 8, 1, 5, 2, 3};
                 
-                int[] u = {1, 9, 5, 3, 2, 8};
-                
+                string[] u1 = {"1", "9", "5", "3", "2", "8"};
+                string[] u2 = { "1", "9", "3", "3", "2", "8" };
+
                 EliminateDuplicates(r);
+                StrictlyIdenticalArrays(u1, u2);
+            }
+
+            private static bool StrictlyIdenticalArrays(string[] list1,string[] list2)
+            {
+                bool areIdentical = true;
+                for (int i = 0,j=0; i < list1.Length; i++,j++)
+                {
+                        if (list1[i]!=list2[j])
+                        {
+                            areIdentical = false;
+                            break;
+                        }
+                }
+                return areIdentical;
             }
 
             private static void  EliminateDuplicates(int[] list)
