@@ -24,14 +24,21 @@ namespace CSharpFundamentals
             private static bool StrictlyIdenticalArrays(string[] list1,string[] list2)
             {
                 bool areIdentical = true;
-                for (int i = 0,j=0; i < list1.Length; i++,j++)
+                if (list1.Length != list2.Length)
                 {
-                        if (list1[i]!=list2[j])
+                    return false;
+                }
+                else
+                {
+                    for (int i = 0, j = 0; i < list1.Length; i++, j++)
+                    {
+                        if (list1[i] != list2[j])
                         {
                             areIdentical = false;
-                            break;
                         }
+                    }
                 }
+
                 return areIdentical;
             }
 
