@@ -28,6 +28,11 @@ namespace ElementaryProgramming
             {
                 var f = value * Math.Pow((1 + monthlyInterest/(12*100)), numberOfYears * 12);
                 Console.WriteLine($"Accumulated value is:{f:C}");
+               
+            }
+            else
+            {
+                Console.WriteLine("Unable to complete your request. Please check your inputs.");
             }
 
         }
